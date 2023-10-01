@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OTP Page</title>
+  <link rel="stylesheet" href="{% static 'CSS.css' %}">
+</head>
+<body>
+    <div class="container">
+  <h2>Confirm OTP </h2>
+  <form  method="post">
+    {% csrf_token %}
+    <div>
+      <label for="OTP">Enter OTP:</label>
+      <input type="text" id="otp" name="otp" required>
+    </div>
+    <input type="submit" value="Submit">
+    {{otp_alert}}
+  </form>
+  <p><a href="{% url 'forgot' %}">Back to Forgot Page</a></p>
+</div>
+</body>
+</html>
